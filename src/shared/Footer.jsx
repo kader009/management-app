@@ -82,7 +82,7 @@ const Footer = () => {
           <div className="flex flex-col items-start gap-4 justify-center">
             <h4 className="text-sm font-semibold">Follow Us</h4>
             <div className="flex items-center gap-4">
-              <Link href="#" aria-label="Twitter">
+              <Link to={'https://twitter.com/home'} aria-label="Twitter">
                 <div>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -100,7 +100,7 @@ const Footer = () => {
                   </svg>
                 </div>
               </Link>
-              <Link href="#" aria-label="Facebook">
+              <Link to={"https://www.facebook.com/"} aria-label="Facebook">
                 <div>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -118,7 +118,7 @@ const Footer = () => {
                   </svg>
                 </div>
               </Link>
-              <Link href="#" aria-label="LinkedIn">
+              <Link to={"https://www.linkedin.com/"} aria-label="LinkedIn">
                 <div>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -138,7 +138,7 @@ const Footer = () => {
                   </svg>
                 </div>
               </Link>
-              <Link href="#" aria-label="Instagram">
+              <Link to={"https://www.instagram.com/"} aria-label="Instagram">
                 <div>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
-  const { googleLogin, githubLogin } = useAuth();
+  const { googleLogin, githubLogin, Signin } = useAuth();
 
   const handleGoogle = () => {
     googleLogin();
@@ -18,6 +18,7 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
+    Signin(email, password)
   };
 
   return (

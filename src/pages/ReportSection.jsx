@@ -11,7 +11,7 @@ const ReportSection = () => {
               <h3 className="text-lg font-medium text-gray-900">
                 Completed Tasks
               </h3>
-              <div className="mt-2 flex items-center justify-between">
+              <div className="mt-2 flex items-center justify-around">
                 <div className="text-2xl font-bold text-green-500">20</div>
                 <div className="ml-2 flex items-center text-sm font-semibold text-green-500">
                   <svg
@@ -35,7 +35,7 @@ const ReportSection = () => {
               <h3 className="text-lg font-medium text-gray-900">
                 Pending Tasks
               </h3>
-              <div className="mt-2 flex items-center justify-between">
+              <div className="mt-2 flex items-center justify-around">
                 <div className="text-2xl font-bold text-blue-500">5</div>
                 <div className="ml-2 flex items-center text-sm font-semibold text-blue-500">
                   <svg
@@ -59,7 +59,7 @@ const ReportSection = () => {
               <h3 className="text-lg font-medium text-gray-900">
                 Overdue Tasks
               </h3>
-              <div className="mt-2 flex items-center justify-between">
+              <div className="mt-2 flex items-center justify-around">
                 <div className="text-2xl font-bold text-red-500">3</div>
                 <div className="ml-2 flex items-center text-sm font-semibold text-red-500">
                   <svg

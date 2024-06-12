@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const Register = () => {
-  const { googleLogin, githubLogin } = useAuth();
+  const { googleLogin, githubLogin, Createuser } = useAuth();
 
   const handleGoogle = () => {
     googleLogin();
@@ -19,6 +19,7 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
+    Createuser(email, password)
   };
 
   return (
@@ -36,7 +37,7 @@ const Register = () => {
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               name="email"
-              type="text"
+              type="email"
               placeholder="Email"
             />
           </div>
