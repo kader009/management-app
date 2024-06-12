@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div>
       <footer className="bg-gray-100 py-12 dark:bg-gray-800">
-        <div className="container max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-8 items-center ali">
+        <div className="container ms-2 max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-8 items-center ali">
           <div className="flex flex-col items-start gap-4">
             <Link href="#" className="flex items-center gap-2">
               <span className="text-lg font-semibold">Direct Tasks</span>
@@ -79,7 +79,7 @@ const Footer = () => {
               </Link>
             </div>
           </div>
-          <div className="flex flex-col items-start gap-4">
+          <div className="flex flex-col items-start gap-4 justify-center">
             <h4 className="text-sm font-semibold">Follow Us</h4>
             <div className="flex items-center gap-4">
               <Link href="#" aria-label="Twitter">

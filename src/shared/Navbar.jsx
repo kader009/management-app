@@ -8,20 +8,20 @@ const Navbar = () => {
     <div>
       <header className="w-full bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] dark:from-[#4338CA] dark:to-[#7C3AED] text-gray-50 shadow">
         <div className="container mx-auto flex items-center justify-between px-4 py-4 md:px-6 md:py-5">
-          <Link href="#" className="text-xl font-bold">
-            Task Manager
+          <Link to="/" className="text-xl font-bold">
+            Direct Tasks
           </Link>
           <nav className="hidden md:flex items-center space-x-6">
-            <Link href="#" className="hover:text-gray-300">
-              Tasks
+            <Link to={'/'} className="hover:text-gray-300">
+              Home
             </Link>
-            <Link href="#" className="hover:text-gray-300">
-              Projects
+            <Link to={'/who-can-use'} className="hover:text-gray-300">
+              Who can use
             </Link>
-            <Link href="#" className="hover:text-gray-300">
-              Calendar
+            <Link to={'register'} className="hover:text-gray-300">
+              Register
             </Link>
-            <Link href="#" className="hover:text-gray-300">
+            <Link to={'/report'} className="hover:text-gray-300">
               Reports
             </Link>
           </nav>
@@ -53,16 +53,16 @@ const Navbar = () => {
       {isOpen && (
         <div className="absolute inset-x-0 top-16 z-10 bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] dark:from-[#4338CA] dark:to-[#7C3AED] text-gray-50 shadow-lg md:hidden">
           <nav className="flex flex-col space-y-4 p-4">
-            <Link href="#" className="hover:text-gray-300">
-              Tasks
+            <Link to={'/'} className="hover:text-gray-300">
+              Home
             </Link>
-            <Link href="#" className="hover:text-gray-300">
-              Projects
+            <Link to={'/who-can-use'} className="hover:text-gray-300">
+              Who can use
             </Link>
-            <Link href="#" className="hover:text-gray-300">
-              Calendar
+            <Link to={'register'} className="hover:text-gray-300">
+              Register
             </Link>
-            <Link href="#" className="hover:text-gray-300">
+            <Link to={'/report'} className="hover:text-gray-300">
               Reports
             </Link>
           </nav>

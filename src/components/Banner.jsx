@@ -14,7 +14,7 @@ const Banner = () => {
               achieve your goals and take your tasks to new heights.
             </p>
             <Link
-              to={''}
+              to={'/login'}
               className="inline-flex items-center justify-center rounded-md bg-white px-6 py-3 text-base font-medium text-[#6366F1] shadow-sm transition-colors hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#6366F1] dark:bg-gray-950 dark:text-[#8B5CF6] dark:hover:bg-gray-800 dark:focus:ring-gray-300 dark:focus:ring-offset-[#4338CA]"
             >
               Let’s Explore
