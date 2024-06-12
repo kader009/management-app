@@ -1,7 +1,18 @@
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 const Register = () => {
+  const { googleLogin, githubLogin } = useAuth();
+
+  const handleGoogle = () => {
+    googleLogin();
+  };
+
+  const handleGithub = () => {
+    githubLogin();
+  };
+
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -16,7 +27,10 @@ const Register = () => {
         <h2 className="text-2xl font-bold mb-5 text-center">Register Now</h2>
         <form onSubmit={handleRegister}>
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="email"
+            >
               Email
             </label>
             <input
@@ -27,7 +41,10 @@ const Register = () => {
             />
           </div>
           <div className="mb-6">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="password"
+            >
               Password
             </label>
             <input
@@ -47,6 +64,7 @@ const Register = () => {
           </div>
           <div className="mt-4">
             <button
+              onClick={handleGoogle}
               className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full flex items-center justify-center mb-2"
               type="button"
             >
@@ -54,6 +72,7 @@ const Register = () => {
               Register with Google
             </button>
             <button
+              onClick={handleGithub}
               className="bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full flex items-center justify-center"
               type="button"
             >
