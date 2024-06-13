@@ -1,16 +1,20 @@
-import Header from "../../components/dashboard/Header";
-import Sidebar from "../../components/dashboard/Sidebar";
+import { Outlet } from 'react-router-dom';
+import Header from '../../components/dashboard/Header';
+import Sidebar from '../../components/dashboard/Sidebar';
 
 const DashboardLayout = () => {
   return (
-    <div>
+    <div className='h-screen'>
       <div>
-        <Header/>
+        <Sidebar />
       </div>
+
       <div>
-        <Sidebar/>
+        <Header />
       </div>
-      <h1>hi</h1>
+      <div className=" ml-16 md:ml-56">
+        <Outlet />
+      </div>
     </div>
   );
 };

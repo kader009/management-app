@@ -1,9 +1,10 @@
 import { FaGoogle, FaGithub } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
   const { googleLogin, githubLogin, Signin } = useAuth();
+  const navigate = useNavigate()
 
   const handleGoogle = () => {
     googleLogin();
@@ -19,6 +20,7 @@ const Login = () => {
     const password = form.password.value;
     console.log(email, password);
     Signin(email, password)
+    navigate('/dashboard')
   };
 
   return (

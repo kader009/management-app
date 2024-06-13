@@ -1,10 +1,12 @@
 import { GoBell } from "react-icons/go";
+import useAuth from "../../hooks/useAuth";
 const Header = () => {
+  const {user} = useAuth()
   return (
-    <div className="flex justify-between items-center p-4">
+    <div className="flex justify-around items-center p-4">
       <div>
         <h1 className="text-xs">Welcome Back!</h1>
-        <p className="text-xl font-semibold">Alexia</p>
+        <p className="text-xl font-semibold">{user?.displayName || 'Mr. Jack'}</p>
       </div>
       <div className="flex items-center space-x-5">
         <div className="hidden md:flex">
@@ -23,7 +25,7 @@ const Header = () => {
           </button>
           <img
             className="w-8 h-8 rounded-full border-4 border-indigo-400"
-            src="https://randomuser.me/api/portraits/women/50.jpg"
+            src={user?.photoURL || "https://randomuser.me/api/portraits/women/50.jpg"}
             alt=""
           />
         </div>
