@@ -10,12 +10,13 @@ import DashboardHome from '../layout/dashboard/DashboardHome';
 import ErrorPage from '../pages/ErrorPage';
 import TaskList from '../components/task/TaskList';
 import { CreateTask } from '../components/task/CreateTask';
+import PrivateRoute from './ProtectedRoute/PrivateRoute';
 
 export const route = createBrowserRouter([
   {
     path: '/',
     element: <MainLayout />,
-    errorElement: <ErrorPage/>,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
@@ -42,19 +43,31 @@ export const route = createBrowserRouter([
   {
     path: 'dashboard',
     element: <DashboardLayout />,
-    errorElement: <ErrorPage/>,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: '',
-        element: <DashboardHome />,
+        element: (
+          <PrivateRoute>
+            <DashboardHome />
+          </PrivateRoute>
+        ),
       },
       {
         path: 'task',
-        element: <TaskList />,
+        element: (
+          <PrivateRoute>
+            <TaskList />
+          </PrivateRoute>
+        ),
       },
       {
         path: 'create-task',
-        element: <CreateTask />,
+        element: (
+          <PrivateRoute>
+            <CreateTask />
+          </PrivateRoute>
+        ),
       },
     ],
   },

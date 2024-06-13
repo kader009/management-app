@@ -18,7 +18,7 @@ const TaskList = () => {
 
   return (
     <>
-      <h1 className="text-xl font-semibold text-center">All Task List</h1>
+      <h1 className="text-xl font-semibold text-center">To Do List</h1>
       <div className="flex justify-center items-center flex-wrap gap-4">
         {tasks.map((task) => (
           <SingleTask key={task._id} task={task} handleupdate={handleupdate}/>

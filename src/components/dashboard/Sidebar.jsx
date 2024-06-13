@@ -1,9 +1,18 @@
 import { useState } from 'react';
 import { LuBox, LuUser, LuCalendar } from 'react-icons/lu';
 import { FaSuitcase, FaTasks, FaCreativeCommons } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 const Sidebar = () => {
+  const { logOut } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logOut();
+    navigate('/');
+  };
+
   const [activeLink, setActiveLink] = useState(0);
 
   const handleLinkClick = (index) => {
@@ -18,7 +27,7 @@ const Sidebar = () => {
       name: 'Create Task',
       icon: FaCreativeCommons,
     },
-    { id: 3, path: 'task', name: 'Task List', icon: FaTasks },
+    { id: 3, path: 'task', name: 'To Do List', icon: FaTasks },
     { id: 4, path: '/projects', name: 'Projects', icon: FaSuitcase },
     { id: 5, path: '/clients', name: 'Clients', icon: LuUser },
     { id: 6, path: '/work', name: 'Work Plan', icon: LuCalendar },
@@ -63,6 +72,14 @@ const Sidebar = () => {
           </li>
         ))}
       </ul>
+      <div className="text-center mt-3">
+        <button
+          onClick={handleLogout}
+          className="bg-indigo-500 text-white p-2 rounded"
+        >
+          Logout
+        </button>
+      </div>
     </div>
   );
 };

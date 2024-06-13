@@ -4,23 +4,26 @@ import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
   const { googleLogin, githubLogin, Signin } = useAuth();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const handleGoogle = () => {
-    googleLogin();
+  const handleGoogle = async () => {
+    await googleLogin();
+    navigate('/dashboard');
   };
 
-  const handleGithub = () => {
-    githubLogin();
+  const handleGithub = async () => {
+    await githubLogin();
+    navigate('/dashboard');
   };
+
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
-    Signin(email, password)
-    navigate('/dashboard')
+    Signin(email, password);
+    navigate('/dashboard');
   };
 
   return (
