@@ -4,9 +4,8 @@ const DashboardHome = () => {
   const { user } = useAuth();
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen">
       <div className="container mx-auto px-4 py-8">
-        {/* Profile Overview */}
         <div className="bg-white shadow-lg rounded-lg overflow-hidden mb-8 p-6">
           <div className="sm:flex sm:items-center">
             <div className="sm:flex-shrink-0">
@@ -37,7 +36,6 @@ const DashboardHome = () => {
           </div>
         </div>
 
-        {/* Recent Activity */}
         <div className="bg-white shadow-lg rounded-lg overflow-hidden mb-8 p-6">
           <h3 className="text-xl font-medium text-gray-900 mb-4">
             Recent Activity
@@ -70,7 +68,6 @@ const DashboardHome = () => {
           </ul>
         </div>
 
-        {/* User Statistics */}
         <div className="bg-white shadow-lg rounded-lg overflow-hidden mb-8 p-6">
           <h3 className="text-xl font-medium text-gray-900 mb-4">
             User Statistics
@@ -81,25 +78,24 @@ const DashboardHome = () => {
                 Tasks Completed
               </h4>
               <p className="text-2xl font-bold text-blue-600">
-                {user?.tasksCompleted || 0}
+                {user?.tasksCompleted || 4}
               </p>
             </div>
             <div className="bg-green-100 p-4 rounded-lg">
               <h4 className="text-lg font-medium text-gray-800">Messages</h4>
               <p className="text-2xl font-bold text-green-600">
-                {user?.messages || 0}
+                {user?.messages || 5}
               </p>
             </div>
             <div className="bg-yellow-100 p-4 rounded-lg">
               <h4 className="text-lg font-medium text-gray-800">Projects</h4>
               <p className="text-2xl font-bold text-yellow-600">
-                {user?.projects || 0}
+                {user?.projects || 8}
               </p>
             </div>
           </div>
         </div>
 
-        {/* Settings Panel */}
         <div className="bg-white shadow-lg rounded-lg overflow-hidden mb-8 p-6">
           <h3 className="text-xl font-medium text-gray-900 mb-4">Settings</h3>
           <div className="space-y-4">

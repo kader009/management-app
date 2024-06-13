@@ -1,21 +1,23 @@
-import { GoBell } from "react-icons/go";
-import useAuth from "../../hooks/useAuth";
+import { GoBell } from 'react-icons/go';
+import useAuth from '../../hooks/useAuth';
 const Header = () => {
-  const {user} = useAuth()
+  const { user } = useAuth();
   return (
-    <div className="flex justify-around items-center p-4">
+    <div className="mb-4 flex justify-center items-center p-4 gap-28">
       <div>
         <h1 className="text-xs">Welcome Back!</h1>
-        <p className="text-xl font-semibold">{user?.displayName || 'Mr. Jack'}</p>
+        <p className="text-xl font-semibold">
+          {user?.displayName || 'Mr. Jack'}
+        </p>
       </div>
       <div className="flex items-center space-x-5">
-        <div className="hidden md:flex">
+        {/* <div className="hidden md:flex">
           <input
             type="text"
             placeholder="Search..."
             className="bg-indigo-100/30 px-4 py-2 rounded-lg focus:outline-0 focus:ring-2 focus:ring-indigo-600"
           />
-        </div>
+        </div> */}
         <div className="flex items-center space-x-5">
           <button className="relative text-2xl text-gray-600 ">
             <GoBell size={28} />
@@ -25,7 +27,10 @@ const Header = () => {
           </button>
           <img
             className="w-8 h-8 rounded-full border-4 border-indigo-400"
-            src={user?.photoURL || "https://randomuser.me/api/portraits/women/50.jpg"}
+            src={
+              user?.photoURL ||
+              'https://randomuser.me/api/portraits/women/50.jpg'
+            }
             alt=""
           />
         </div>
