@@ -5,6 +5,7 @@ import WhoCanUse from "../pages/WhoCanUse";
 import Login from "../pages/logInfo/Login";
 import Register from "../pages/logInfo/Register";
 import ReportSection from "../pages/ReportSection";
+import DashboardLayout from "../layout/dashboard/DashboardLayout";
 
 export const route = createBrowserRouter([
   {
@@ -32,5 +33,9 @@ export const route = createBrowserRouter([
         element: <ReportSection/>
       }
     ]
+  },
+  {
+    path:'dashboard',
+    element: <DashboardLayout/>
   }
 ])
