@@ -1,16 +1,8 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import useAuth from '../hooks/useAuth';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { user, logOut } = useAuth();
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    logOut();
-    navigate('/');
-  };
 
   return (
     <div>
@@ -32,8 +24,9 @@ const Navbar = () => {
             <Link to={'/report'} className="hover:text-gray-300">
               Reports
             </Link>
-            {user?.email}
-            <button onClick={handleLogout}>logout</button>
+            <Link to={'dashboard'} className="hover:text-gray-300">
+              Dashboard
+            </Link>
           </nav>
           <button
             className="flex items-center space-x-2 rounded-md bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] dark:from-[#4338CA] dark:to-[#7C3AED] px-4 py-2 text-sm font-medium transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 md:hidden"

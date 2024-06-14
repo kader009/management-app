@@ -5,7 +5,7 @@ const TaskList = () => {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/tasks')
+    fetch('https://management-app-backend-1.onrender.com/tasks')
       .then((res) => res.json())
       .then((data) => {
         setTasks(data);
@@ -21,7 +21,7 @@ const TaskList = () => {
       <h1 className="text-xl font-semibold text-center">To Do List</h1>
       <div className="flex justify-center items-center flex-wrap gap-4">
         {tasks.map((task) => (
-          <SingleTask key={task._id} task={task} handleupdate={handleupdate}/>
+          <SingleTask key={task._id} task={task} handleupdate={handleupdate} />
         ))}
       </div>
     </>

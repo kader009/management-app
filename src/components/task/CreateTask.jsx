@@ -8,7 +8,7 @@ export const CreateTask = () => {
 
   const handleFormSubmit = async (data) => {
     try {
-      const response = await fetch(`http://localhost:5000/tasks`, {
+      const response = await fetch(`https://management-app-backend-1.onrender.com/tasks`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

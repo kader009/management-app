@@ -3,21 +3,24 @@ import { FaEdit, FaTrash, FaSave } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
 
-const SingleTask = ({ task, handleUpdate }) => {
+const SingleTask = ({ task, handleupdate }) => {
   const { _id, priority, title, description, deadline } = task;
   const [isEditing, setIsEditing] = useState(false);
   const [editTask, setEditTask] = useState(task);
 
   const handleDelete = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/tasks/${_id}`, {
-        method: 'DELETE',
-      });
+      const response = await fetch(
+        `https://management-app-backend-1.onrender.com/tasks/${_id}`,
+        {
+          method: 'DELETE',
+        }
+      );
 
       if (response.ok) {
         const data = await response.json();
         console.log(data);
-        handleUpdate(_id);
+        handleupdate(_id); 
         toast.success('Task deleted successfully!');
       } else {
         console.error('Failed to delete task');
@@ -39,7 +42,7 @@ const SingleTask = ({ task, handleUpdate }) => {
 
   const saveEdit = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/tasks/${_id}`, {
+      const response = await fetch(`https://management-app-backend-1.onrender.com/tasks/${_id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -48,9 +51,10 @@ const SingleTask = ({ task, handleUpdate }) => {
       });
 
       if (response.ok) {
-        const data = await response.json();
-        console.log(data); // Update task list with the new data
+        const updatedTask = await response.json();
+        setEditTask(updatedTask);
         setIsEditing(false);
+        handleupdate(editTask);
         toast.success('Task updated successfully!');
       } else {
         console.error('Failed to update task');
@@ -153,13 +157,13 @@ const SingleTask = ({ task, handleUpdate }) => {
 
 SingleTask.propTypes = {
   task: PropTypes.shape({
-    _id: PropTypes.number.isRequired,
+    _id: PropTypes.string.isRequired,
     priority: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     deadline: PropTypes.string.isRequired,
   }).isRequired,
-  handleUpdate: PropTypes.func.isRequired,
+  handleupdate: PropTypes.func.isRequired,
 };
 
 export default SingleTask;
